@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+  border-collapse: collapse; /* remove espaços entre as bordas */
+}
+th, td{
+  border: 2px solid black; 
+  /* adicione borda às células */
+  padding: 8px;
+  text-align: center; 
+}
+  th { background-color: "FFA500"; 
+      /* cor de fundo para cabeçalho*/
+  }
+ 
+
+  
+
+
