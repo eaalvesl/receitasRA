@@ -44,16 +44,45 @@
     <option value="salgados">Salgados</option>
      <option value="sobremesa">Sobremesa</option>
      <option value="outros">outros</option>
-<select>
+  <select>
 
+   <!-- Descrição Do Pedido -->
+ <label for="descricao">Descreva seu pedido:</label>
+   <textarea name="descricao" id="descricao" rows="4" required></textarea>
 
+  <!-- Restrições Alimentares -->
+ <label for="restricao">Possui alguma restrição alimentar?</label>
+   <textarea name="restricao" id="restricao" rows="2" placeholder="Ex: sem lactose, sem glútem..."></textarea>
 
+  <!-- Forma De Pagamento -->
+  <label for="pagamento">Forma de pagamento:</label>
+   <select name="pagamento" id="pagamento"required>
+ <option value="">Selecione uma opção</option>
+   <option value="pix">Pix</option>
+ <option value="cartao">Cartão de crédito</option>
+  <option value="boleto">Boleto</option>
+ <option value="dinheiro">Dinheiro na entrega</option>
+</select>
 
+   <!-- Data e Hora -->
+ <label for="data">data da encomenda:</label>
+   <input type="date" id="data" name="data" required>
 
+  <label for="hora">Horário desejado</label>
+<input type="hora" id="hora" name="hora" required>
 
+<!-- Entrega ou Retirada -->
+<label for="entrega">Como deseja receber:</label>
+   <select id="entrega" name="entrega" required>
+ <option value="">Selecione uma opção</option>
+ <option value="entrega">Entrega </option>
+ <option value="retirada">Retirada</option>
+</select>
 
+<!-- Botão de envio -->
+<button type="submit"> Enviar Pedido</button>
 
-
-
+</form>
+</div>
 
 
