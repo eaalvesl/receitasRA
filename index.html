@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letreiro Animado Bate e Volta</title>
-    <style>
-        /* Inclua o CSS aqui ou mantenha o link para styles.css */
-    </style>
+    <title>Letreiro Animado Interativo</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
-<body id="page-body">
-    <div class="container-letreiro">
-        <div class="letreiro" id="letreiro-animado">
-            **Acredite no seu potencial. O sucesso é a soma de pequenos esforços!**
+<body>
+    <main id="main-content">
+        <h1>Letreiro Interativo</h1>
+        
+        <div class="controls">
+            <input type="text" id="input-texto" placeholder="Digite uma nova frase..." value="Acredite no seu potencial. O sucesso é a soma de pequenos esforços!" aria-label="Nova frase para o letreiro">
+            <button id="btn-atualizar" title="Atualizar texto do letreiro">Atualizar Texto</button>
+            <button id="btn-controle" title="Pausar ou Retomar a animação">Pausar</button>
         </div>
-    </div>
 
-    <button id="btn-controle">Pausar</button>
+        <div class="container-letreiro">
+            <div class="letreiro" id="letreiro-animado">
+                </div>
+        </div>
+    </main>
 
-    <script src="script.js"></script> </body>
+    <script src="script.js"></script>
+</body>
 </html>
