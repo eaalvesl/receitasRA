@@ -1,33 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letreiro Animado Interativo</title>
-    <link rel="stylesheet" href="styles.css"> 
+<meta charset="UTF-8">
+<title>Letreiro Deslizante</title>
+
+<style>
+    /* Configura o "tamanho da tela" */
+    body {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;      /* Altura da tela */
+        margin: 0;
+    }
+
+    .container {
+        width: 80%;          /* Largura da tela */
+        height: 100px;       /* Altura da área do letreiro */
+        border: 2px solid #333;
+        padding: 20px;       /* Espaço livre ao redor do letreiro */
+        overflow: hidden;    /* Oculta o texto fora da área */
+        position: relative;
+        background: white;
+    }
+
+    .letreiro {
+        position: absolute;
+        white-space: nowrap;
+        font-size: 28px;
+        font-weight: bold;
+        color: #1a73e8;
+        text-align: center;   /* Alinhamento do texto */
+    }
+</style>
 </head>
+
 <body>
-    <main id="main-content">
-        <h1>Letreiro Interativo</h1>
-        
-        <div class="controls">
-            <input 
-                type="text" 
-                id="input-texto" 
-                placeholder="Digite uma nova frase..." 
-                value="Acredite no seu potencial. O sucesso é a soma de pequenos esforços!" 
-                aria-label="Nova frase para o letreiro"
-            >
-            <button id="btn-atualizar" title="Atualizar texto do letreiro">Atualizar Texto</button>
-            <button id="btn-controle" title="Pausar ou Retomar a animação">Pausar</button>
-        </div>
 
-        <div class="container-letreiro">
-            <div class="letreiro" id="letreiro-animado">
-                </div>
-        </div>
-    </main>
+<div class="container">
+    <div id="letreiro" class="letreiro">
+        🌟 Mantenha o foco, a disciplina e a coragem para continuar! 🌟
+    </div>
+</div>
 
-    <script src="script.js"></script>
+<script>
+    const letreiro = document.getElementById("letreiro");
+    const container = document.querySelector(".container");
+
+    let pos = 0;
+    let direction = 1;  // 1 = direita, -1 = esquerda
+    let speed = 2;      // VELOCIDADE do letreiro (quanto maior o número, maior a velocidade)
+
+    function animar() {
+        const larguraContainer = container.clientWidth;
+        const larguraTexto = letreiro.clientWidth;
+
+        // Movimenta o letreiro
+        pos += direction * speed;
+
+        // Inverte direção ao bater nas bordas
+        if (pos + larguraTexto >= larguraContainer || pos <= 0) {
+            direction *= -1;
+        }
+
+        letreiro.style.left = pos + "px";
+        requestAnimationFrame(animar);
+    }
+
+    animar();
+</script>
+
 </body>
 </html>
