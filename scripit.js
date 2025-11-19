@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         letreiro.textContent = novoTexto;
         
         // 3. Reinicia a animação (resetando a posição)
-        // Isso é feito forçando um 'reflow' (recalculo de layout)
+        // O navegador precisa ser forçado a recalcular o layout para a animação recomeçar
         letreiro.style.animation = 'none';
         void letreiro.offsetWidth; // Truque para forçar o reflow
         letreiro.style.animation = null; // Remove a instrução 'none'
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 4. Retorna ao estado anterior (rodando ou pausado)
         letreiro.style.animationPlayState = estadoAnterior;
 
-        // Se estava pausado, o botão deve refletir o estado correto
+        // Atualiza a variável de estado para refletir o que o CSS está fazendo
         if (estadoAnterior === 'paused') {
             estaRodando = false;
         } else {
@@ -78,7 +78,4 @@ document.addEventListener('DOMContentLoaded', () => {
             atualizarTexto();
         }
     });
-
-    // Opcional: Controle de velocidade (mantido)
-    // Para alterar a velocidade, basta mudar o valor da variável --velocidade no styles.css
 });

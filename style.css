@@ -14,7 +14,7 @@ body {
     background-color: var(--cor-fundo);
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha no topo para dar espaço aos controles */
+    align-items: flex-start; 
     overflow-x: hidden;
 }
 
@@ -60,7 +60,7 @@ h1 {
 }
 
 #btn-controle {
-    background-color: #28a745; /* Verde inicial */
+    background-color: #28a745; 
 }
 
 #btn-atualizar {
@@ -86,10 +86,10 @@ h1 {
 
 .letreiro {
     white-space: nowrap; 
-    font-size: 2.5em; /* Aumentado para impacto */
+    font-size: 2.5em; 
     font-weight: 700;
     color: var(--cor-primaria);
-    padding: 0 10vw; /* Padding lateral flexível */
+    padding: 0 10vw; 
 
     /* Animação */
     animation-name: desliza-e-volta;
@@ -101,15 +101,10 @@ h1 {
 
 /* Keyframes da Animação */
 @keyframes desliza-e-volta {
-    /* O texto começa completamente fora da tela, à esquerda. */
     from {
         transform: translateX(-100%); 
     }
-    
-    /* O texto desliza até o outro lado da tela, à direita. */
     to {
-        /* Move o texto 100% da largura do contêiner para a direita */
-        /* O `100%` refere-se ao `container-letreiro` */
         transform: translateX(100%); 
     }
 }
